@@ -7,7 +7,7 @@ import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "roles" , schema = "user_service")
+@Table(name = "roles", schema = "user_service")
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
@@ -20,6 +20,6 @@ public class RoleModel {
 	@Column(name = "role_type", nullable = false, unique = true, length = 20)
 	private RoleType roleType;
 
-	@Column(name = "created_at", columnDefinition = "timestampz")
+	@Column(name = "created_at", columnDefinition = "timestamptz")
 	private LocalDateTime createdAt;
 }

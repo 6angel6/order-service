@@ -18,13 +18,13 @@ public class BaseModel {
 	@Column(name = "created_at" , columnDefinition = "timestamptz", updatable = false)
 	private LocalDateTime createdAt;
 
-	@Column(name = "created_at" , columnDefinition = "timestamptz", updatable = false)
+	@Column(name = "updated_a" , columnDefinition = "timestamptz", updatable = false)
 	private LocalDateTime updatedAt;
 
-	@Column(name = "created_at" , columnDefinition = "timestamptz", updatable = false)
+	@Column(name = "deleted_at" , columnDefinition = "timestamptz", updatable = false)
 	private LocalDateTime deletedAt;
 
-	@Column(name = "created_at" , columnDefinition = "timestamptz", updatable = false)
+	@Column(name = "deleted" , columnDefinition = "timestamptz", updatable = false)
 	private boolean deleted;
 
 	@PrePersist

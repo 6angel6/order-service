@@ -9,6 +9,7 @@ import com.angel.domain.user.vo.Role;
 import com.angel.domain.user.vo.UserID;
 
 import java.util.Set;
+import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -99,6 +100,11 @@ public class User extends Aggregate {
 		this.emailConfirmed = emailConfirmed;
 		this.password = password;
 	}
+
+	public UUID getID() {
+		return userID.getID();
+	}
+
 
 	public UserID getUserID() {
 		return userID;

@@ -10,13 +10,12 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "\"users\"", schema = "user_service")
-@Getter
-@Setter
-@ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
+@Getter
+@Setter
 public class UserModel extends BaseModel {
-
 
 	@Column(name = "first_name", nullable = false, length = 25)
 	private String firstName;
@@ -45,7 +44,9 @@ public class UserModel extends BaseModel {
 	)
 	private Set<RoleModel> roles = new HashSet<>();
 
-	public UserModel(UUID id, String firstName, String lastName, String username, String email, boolean emailConfirmed, String password, Set<RoleModel> roles) {
+	public UserModel(UUID id, String firstName, String lastName, String username, String email,
+	                 boolean emailConfirmed, String password, Set<RoleModel> roles) {
+		this.setId(id);
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.username = username;
@@ -53,7 +54,6 @@ public class UserModel extends BaseModel {
 		this.emailConfirmed = emailConfirmed;
 		this.password = password;
 		this.roles = roles;
-		this.setId(id);
 	}
 
 	@Override
